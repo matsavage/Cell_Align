@@ -1,26 +1,25 @@
 #include "colors.inc"
 
-/*
+          
 #declare rx = -90;
 #declare ry = 45;
 #declare rz = 90; 
-*/
-
+             /*
 #declare rx = 0;
 #declare ry = 0;
 #declare rz = 0;
-
+              */
 #declare sx = 0;
 #declare sy = 0;
 #declare sz = 0; 
 
 #declare drx = 0;
-#declare dry = 0;
-#declare drz = 270;
+#declare dry = 0;                                                    
+#declare drz = 0;
 
-#declare tx = 0;
-#declare ty = 0;
-#declare tz = 0;
+#declare tx = 12.344888;
+#declare ty = 5.695864;
+#declare tz = 5.880068;
 
 global_settings {
   assumed_gamma 2.2

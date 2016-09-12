@@ -1,9 +1,9 @@
 #declare bondsColor = color rgb <1,1,1>;
-#declare cellcylRadius=0.2;
+#declare cellcylRadius=0.1;
 #declare MapcylRadius=0.015000;
 #declare Map0Level0Color= color rgb <0.000000, 1.000000,0.000000>;
 #declare Map0Level1Color= color rgb <0.000000, 0.000000,1.000000>;
-#declare Map0Level2Color= color rgb <1.000000, 0.000000,0.000000>;  
+#declare Map0Level2Color= color rgb <1.000000, 0.000000,0.000000>;
 #declare ColorForH  = color rgb <0.901961, 0.901961,1.000000>;
 #declare ColorForHE  = color rgb <0.850980, 1.000000,1.000000>;
 #declare ColorForLI  = color rgb <0.803922, 0.494118,1.000000>;
@@ -111,42 +111,6 @@
 #declare ColorFor  = color rgb <0.000000, 0.000000,0.000000>;
 union {
 union {
-cylinder{< -15.463900, -15.463900, 0.000000 > , < 0.000000, -15.463900, 0.000000>, cellcylRadius pigment {color rgb <1, 0, 0>}}
-cylinder{< -15.463900, -15.463900, 0.000000 > , < -15.463900, 0.000000, 0.000000>, cellcylRadius pigment {color rgb <0, 1, 0>}}
-cylinder{< 0.000000, 0.000000, 0.000000 > , < 0.000000, -15.463900, 0.000000>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< -15.463900, 0.000000, 0.000000 > , < 0.000000, 0.000000, 0.000000>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< -15.463900, -15.463900, 0.000000 > , < -15.463900, -15.463900, 12.261700>, cellcylRadius pigment {color rgb <0, 0, 1>}}
-cylinder{< 0.000000, -15.463900, 12.261700 > , < 0.000000, -15.463900, 0.000000>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< -15.463900, 0.000000, 0.000000 > , < -15.463900, 0.000000, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< 0.000000, 0.000000, 0.000000 > , < 0.000000, 0.000000, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< -15.463900, -15.463900, 12.261700 > , < 0.000000, -15.463900, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< -15.463900, -15.463900, 12.261700 > , < -15.463900, 0.000000, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< -15.463900, 0.000000, 12.261700 > , < 0.000000, 0.000000, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< 0.000000, -15.463900, 12.261700 > , < 0.000000, 0.000000, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< -15.463900, 0.000000, 0.000000 > , < 0.000000, 0.000000, 0.000000>, cellcylRadius pigment {color rgb <1, 0, 0>}}
-cylinder{< -15.463900, 0.000000, 0.000000 > , < -15.463900, 15.463900, 0.000000>, cellcylRadius pigment {color rgb <0, 1, 0>}}
-cylinder{< 0.000000, 15.463900, 0.000000 > , < 0.000000, 0.000000, 0.000000>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< -15.463900, 15.463900, 0.000000 > , < 0.000000, 15.463900, 0.000000>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< -15.463900, 0.000000, 0.000000 > , < -15.463900, 0.000000, 12.261700>, cellcylRadius pigment {color rgb <0, 0, 1>}}
-cylinder{< 0.000000, 0.000000, 12.261700 > , < 0.000000, 0.000000, 0.000000>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< -15.463900, 15.463900, 0.000000 > , < -15.463900, 15.463900, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< 0.000000, 15.463900, 0.000000 > , < 0.000000, 15.463900, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< -15.463900, 0.000000, 12.261700 > , < 0.000000, 0.000000, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< -15.463900, 0.000000, 12.261700 > , < -15.463900, 15.463900, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< -15.463900, 15.463900, 12.261700 > , < 0.000000, 15.463900, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< 0.000000, 0.000000, 12.261700 > , < 0.000000, 15.463900, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< 0.000000, -15.463900, 0.000000 > , < 15.463900, -15.463900, 0.000000>, cellcylRadius pigment {color rgb <1, 0, 0>}}
-cylinder{< 0.000000, -15.463900, 0.000000 > , < 0.000000, 0.000000, 0.000000>, cellcylRadius pigment {color rgb <0, 1, 0>}}
-cylinder{< 15.463900, 0.000000, 0.000000 > , < 15.463900, -15.463900, 0.000000>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< 0.000000, 0.000000, 0.000000 > , < 15.463900, 0.000000, 0.000000>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< 0.000000, -15.463900, 0.000000 > , < 0.000000, -15.463900, 12.261700>, cellcylRadius pigment {color rgb <0, 0, 1>}}
-cylinder{< 15.463900, -15.463900, 12.261700 > , < 15.463900, -15.463900, 0.000000>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< 0.000000, 0.000000, 0.000000 > , < 0.000000, 0.000000, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< 15.463900, 0.000000, 0.000000 > , < 15.463900, 0.000000, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< 0.000000, -15.463900, 12.261700 > , < 15.463900, -15.463900, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< 0.000000, -15.463900, 12.261700 > , < 0.000000, 0.000000, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< 0.000000, 0.000000, 12.261700 > , < 15.463900, 0.000000, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
-cylinder{< 15.463900, -15.463900, 12.261700 > , < 15.463900, 0.000000, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
 cylinder{< 0.000000, 0.000000, 0.000000 > , < 15.463900, 0.000000, 0.000000>, cellcylRadius pigment {color rgb <1, 0, 0>}}
 cylinder{< 0.000000, 0.000000, 0.000000 > , < 0.000000, 15.463900, 0.000000>, cellcylRadius pigment {color rgb <0, 1, 0>}}
 cylinder{< 15.463900, 15.463900, 0.000000 > , < 15.463900, 0.000000, 0.000000>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}

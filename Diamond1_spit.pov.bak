@@ -18,9 +18,9 @@
 #declare dry = 0;
 #declare drz = 0;
 
-#declare tx = 7.731951;
-#declare ty = 7.731951;
-#declare tz = 6.130851;
+#declare tx = 0;
+#declare ty = 0;
+#declare tz = 0;
 
 global_settings {
   assumed_gamma 2.2
