@@ -1,0 +1,778 @@
+union{ 
+#declare cellcylRadius=0.013;
+#declare bondcylRadius=0.060;
+#declare AtomRadius=0.200;
+#declare Map0Level0Color= color rgb <0.000000, 1.000000,0.000000>;
+#declare Map0Level1Color= color rgb <0.000000, 0.000000,1.000000>;
+#declare Map0Level2Color= color rgb <1.000000, 0.000000,0.000000>;
+#declare ColorForH  = color rgb <0.901961, 0.901961,1.000000>;
+#declare AtomRadiusForH  = 1.170000;
+#declare ColorForHE  = color rgb <0.850980, 1.000000,1.000000>;
+#declare AtomRadiusForHE  = 1.400000;
+#declare ColorForLI  = color rgb <0.803922, 0.494118,1.000000>;
+#declare AtomRadiusForLI  = 1.800000;
+#declare ColorForBE  = color rgb <0.772549, 1.000000,0.000000>;
+#declare AtomRadiusForBE  = 2.100000;
+#declare ColorForB  = color rgb <1.000000, 0.717647,0.717647>;
+#declare AtomRadiusForB  = 2.100000;
+#declare ColorForC  = color rgb <0.572549, 0.572549,0.572549>;
+#declare AtomRadiusForC  = 1.700000;
+#declare ColorForN  = color rgb <0.392157, 0.392157,1.000000>;
+#declare AtomRadiusForN  = 1.580000;
+#declare ColorForO  = color rgb <0.941176, 0.000000,0.000000>;
+#declare AtomRadiusForO  = 1.520000;
+#declare ColorForF  = color rgb <0.701961, 1.000000,1.000000>;
+#declare AtomRadiusForF  = 1.470000;
+#declare ColorForNE  = color rgb <0.686275, 0.890196,0.956863>;
+#declare AtomRadiusForNE  = 1.600000;
+#declare ColorForNA  = color rgb <0.666667, 0.368627,0.949020>;
+#declare AtomRadiusForNA  = 2.300000;
+#declare ColorForMG  = color rgb <0.537255, 1.000000,0.000000>;
+#declare AtomRadiusForMG  = 1.700000;
+#declare ColorForAL  = color rgb <0.823529, 0.647059,0.647059>;
+#declare AtomRadiusForAL  = 2.100000;
+#declare ColorForSI  = color rgb <0.505882, 0.603922,0.603922>;
+#declare AtomRadiusForSI  = 1.700000;
+#declare ColorForP  = color rgb <1.000000, 0.501961,0.000000>;
+#declare AtomRadiusForP  = 1.800000;
+#declare ColorForS  = color rgb <1.000000, 0.784314,0.196078>;
+#declare AtomRadiusForS  = 1.800000;
+#declare ColorForCL  = color rgb <0.125490, 0.941176,0.125490>;
+#declare AtomRadiusForCL  = 1.780000;
+#declare ColorForAR  = color rgb <0.505882, 0.819608,0.894118>;
+#declare AtomRadiusForAR  = 1.900000;
+#declare ColorForK  = color rgb <0.560784, 0.254902,0.827451>;
+#declare AtomRadiusForK  = 2.800000;
+#declare ColorForCA  = color rgb <0.239216, 1.000000,0.000000>;
+#declare AtomRadiusForCA  = 2.100000;
+#declare ColorForSC  = color rgb <0.901961, 0.901961,0.894118>;
+#declare AtomRadiusForSC  = 2.100000;
+#declare ColorForTI  = color rgb <0.752941, 0.764706,0.776471>;
+#declare AtomRadiusForTI  = 2.100000;
+#declare ColorForV  = color rgb <0.654902, 0.647059,0.674510>;
+#declare AtomRadiusForV  = 2.100000;
+#declare ColorForCR  = color rgb <0.545098, 0.600000,0.776471>;
+#declare AtomRadiusForCR  = 2.100000;
+#declare ColorForMN  = color rgb <0.611765, 0.482353,0.776471>;
+#declare AtomRadiusForMN  = 2.100000;
+#declare ColorForFE  = color rgb <0.505882, 0.482353,0.776471>;
+#declare AtomRadiusForFE  = 2.100000;
+#declare ColorForCO  = color rgb <0.439216, 0.482353,0.764706>;
+#declare AtomRadiusForCO  = 2.100000;
+#declare ColorForNI  = color rgb <0.364706, 0.482353,0.764706>;
+#declare AtomRadiusForNI  = 1.600000;
+#declare ColorForCU  = color rgb <1.000000, 0.482353,0.384314>;
+#declare AtomRadiusForCU  = 1.400000;
+#declare ColorForZN  = color rgb <0.486275, 0.505882,0.686275>;
+#declare AtomRadiusForZN  = 1.400000;
+#declare ColorForGA  = color rgb <0.764706, 0.572549,0.568627>;
+#declare AtomRadiusForGA  = 1.900000;
+#declare ColorForGE  = color rgb <0.400000, 0.572549,0.572549>;
+#declare AtomRadiusForGE  = 2.100000;
+#declare ColorForAS  = color rgb <0.745098, 0.505882,0.890196>;
+#declare AtomRadiusForAS  = 1.850000;
+#declare ColorForSE  = color rgb <0.882353, 0.635294,0.000000>;
+#declare AtomRadiusForSE  = 1.900000;
+#declare ColorForBR  = color rgb <0.647059, 0.164706,0.164706>;
+#declare AtomRadiusForBR  = 1.850000;
+#declare ColorForKR  = color rgb <0.364706, 0.729412,0.819608>;
+#declare AtomRadiusForKR  = 2.000000;
+#declare ColorForRB  = color rgb <0.392157, 0.156863,0.666667>;
+#declare AtomRadiusForRB  = 2.100000;
+#declare ColorForSR  = color rgb <0.000000, 1.000000,0.000000>;
+#declare AtomRadiusForSR  = 2.100000;
+#declare ColorForY  = color rgb <0.588235, 0.992157,1.000000>;
+#declare AtomRadiusForY  = 2.100000;
+#declare ColorForZR  = color rgb <0.588235, 0.882353,0.882353>;
+#declare AtomRadiusForZR  = 2.100000;
+#declare ColorForNB  = color rgb <0.454902, 0.764706,0.796078>;
+#declare AtomRadiusForNB  = 2.100000;
+#declare ColorForMO  = color rgb <0.333333, 0.709804,0.717647>;
+#declare AtomRadiusForMO  = 2.100000;
+#declare ColorForTC  = color rgb <0.235294, 0.623529,0.658824>;
+#declare AtomRadiusForTC  = 2.100000;
+#declare ColorForRU  = color rgb <0.137255, 0.556863,0.592157>;
+#declare AtomRadiusForRU  = 2.100000;
+#declare ColorForRH  = color rgb <0.043137, 0.486275,0.549020>;
+#declare AtomRadiusForRH  = 2.100000;
+#declare ColorForPD  = color rgb <0.000000, 0.411765,0.525490>;
+#declare AtomRadiusForPD  = 1.600000;
+#declare ColorForAG  = color rgb <0.600000, 0.776471,1.000000>;
+#declare AtomRadiusForAG  = 1.700000;
+#declare ColorForCD  = color rgb <1.000000, 0.847059,0.568627>;
+#declare AtomRadiusForCD  = 1.600000;
+#declare ColorForIN  = color rgb <0.654902, 0.462745,0.450980>;
+#declare AtomRadiusForIN  = 1.900000;
+#declare ColorForSN  = color rgb <0.400000, 0.505882,0.505882>;
+#declare AtomRadiusForSN  = 2.200000;
+#declare ColorForSB  = color rgb <0.623529, 0.396078,0.709804>;
+#declare AtomRadiusForSB  = 2.100000;
+#declare ColorForTE  = color rgb <0.835294, 0.482353,0.000000>;
+#declare AtomRadiusForTE  = 2.060000;
+#declare ColorForI  = color rgb <0.576471, 0.000000,0.576471>;
+#declare AtomRadiusForI  = 1.960000;
+#declare ColorForXE  = color rgb <0.258824, 0.623529,0.690196>;
+#declare AtomRadiusForXE  = 2.160000;
+#declare ColorForCS  = color rgb <0.341176, 0.098039,0.560784>;
+#declare AtomRadiusForCS  = 2.100000;
+#declare ColorForBA  = color rgb <0.000000, 0.796078,0.000000>;
+#declare AtomRadiusForBA  = 2.100000;
+#declare ColorForLA  = color rgb <0.439216, 0.870588,1.000000>;
+#declare AtomRadiusForLA  = 2.100000;
+#declare ColorForCE  = color rgb <1.000000, 1.000000,0.784314>;
+#declare AtomRadiusForCE  = 2.100000;
+#declare ColorForPR  = color rgb <0.890196, 1.000000,0.784314>;
+#declare AtomRadiusForPR  = 2.100000;
+#declare ColorForND  = color rgb <0.780392, 1.000000,0.784314>;
+#declare AtomRadiusForND  = 2.100000;
+#declare ColorForPM  = color rgb <0.670588, 1.000000,0.784314>;
+#declare AtomRadiusForPM  = 2.100000;
+#declare ColorForSM  = color rgb <0.560784, 1.000000,0.784314>;
+#declare AtomRadiusForSM  = 2.100000;
+#declare ColorForEU  = color rgb <0.450980, 1.000000,0.784314>;
+#declare AtomRadiusForEU  = 2.100000;
+#declare ColorForGD  = color rgb <0.341176, 1.000000,0.784314>;
+#declare AtomRadiusForGD  = 2.100000;
+#declare ColorForTB  = color rgb <0.231373, 1.000000,0.784314>;
+#declare AtomRadiusForTB  = 2.100000;
+#declare ColorForDY  = color rgb <0.121569, 1.000000,0.717647>;
+#declare AtomRadiusForDY  = 2.100000;
+#declare ColorForHO  = color rgb <0.000000, 1.000000,0.650980>;
+#declare AtomRadiusForHO  = 2.100000;
+#declare ColorForER  = color rgb <0.000000, 0.905882,0.584314>;
+#declare AtomRadiusForER  = 2.100000;
+#declare ColorForTM  = color rgb <0.000000, 0.811765,0.517647>;
+#declare AtomRadiusForTM  = 2.100000;
+#declare ColorForYB  = color rgb <0.000000, 0.717647,0.450980>;
+#declare AtomRadiusForYB  = 2.100000;
+#declare ColorForLU  = color rgb <0.000000, 0.623529,0.384314>;
+#declare AtomRadiusForLU  = 2.100000;
+#declare ColorForHF  = color rgb <0.301961, 0.760784,1.000000>;
+#declare AtomRadiusForHF  = 2.100000;
+#declare ColorForTA  = color rgb <0.301961, 0.654902,1.000000>;
+#declare AtomRadiusForTA  = 2.100000;
+#declare ColorForW  = color rgb <0.152941, 0.580392,0.839216>;
+#declare AtomRadiusForW  = 2.100000;
+#declare ColorForRE  = color rgb <0.152941, 0.494118,0.674510>;
+#declare AtomRadiusForRE  = 2.100000;
+#declare ColorForOS  = color rgb <0.152941, 0.407843,0.592157>;
+#declare AtomRadiusForOS  = 2.100000;
+#declare ColorForIR  = color rgb <0.094118, 0.333333,0.529412>;
+#declare AtomRadiusForIR  = 2.100000;
+#declare ColorForPT  = color rgb <0.094118, 0.356863,0.568627>;
+#declare AtomRadiusForPT  = 1.750000;
+#declare ColorForAU  = color rgb <1.000000, 0.819608,0.141176>;
+#declare AtomRadiusForAU  = 1.700000;
+#declare ColorForHG  = color rgb <0.709804, 0.709804,0.764706>;
+#declare AtomRadiusForHG  = 1.500000;
+#declare ColorForTL  = color rgb <0.654902, 0.333333,0.301961>;
+#declare AtomRadiusForTL  = 2.000000;
+#declare ColorForPB  = color rgb <0.341176, 0.352941,0.376471>;
+#declare AtomRadiusForPB  = 2.100000;
+#declare ColorForBI  = color rgb <0.623529, 0.309804,0.709804>;
+#declare AtomRadiusForBI  = 2.100000;
+#declare ColorForPO  = color rgb <0.674510, 0.364706,0.000000>;
+#declare AtomRadiusForPO  = 2.100000;
+#declare ColorForAT  = color rgb <0.462745, 0.309804,0.270588>;
+#declare AtomRadiusForAT  = 2.100000;
+#declare ColorForRN  = color rgb <0.258824, 0.517647,0.592157>;
+#declare AtomRadiusForRN  = 2.100000;
+#declare ColorForFR  = color rgb <0.258824, 0.000000,0.400000>;
+#declare AtomRadiusForFR  = 3.500000;
+#declare ColorForRA  = color rgb <0.000000, 0.486275,0.000000>;
+#declare AtomRadiusForRA  = 3.500000;
+#declare ColorForAC  = color rgb <0.443137, 0.666667,0.988235>;
+#declare AtomRadiusForAC  = 3.500000;
+#declare ColorForTH  = color rgb <0.000000, 0.733333,1.000000>;
+#declare AtomRadiusForTH  = 2.100000;
+#declare ColorForPA  = color rgb <0.000000, 0.670588,1.000000>;
+#declare AtomRadiusForPA  = 2.100000;
+#declare ColorForU  = color rgb <0.000000, 0.607843,0.901961>;
+#declare AtomRadiusForU  = 2.100000;
+#declare ColorForNP  = color rgb <0.000000, 0.545098,0.901961>;
+#declare AtomRadiusForNP  = 2.100000;
+#declare ColorForPU  = color rgb <0.000000, 0.482353,0.901961>;
+#declare AtomRadiusForPU  = 2.100000;
+#declare ColorForAM  = color rgb <0.341176, 0.419608,0.823529>;
+#declare AtomRadiusForAM  = 2.100000;
+#declare ColorForCM  = color rgb <0.396078, 0.356863,0.823529>;
+#declare AtomRadiusForCM  = 2.100000;
+#declare ColorForBK  = color rgb <0.450980, 0.294118,0.823529>;
+#declare AtomRadiusForBK  = 2.100000;
+#declare ColorForCF  = color rgb <0.505882, 0.231373,0.588235>;
+#declare AtomRadiusForCF  = 2.100000;
+#declare ColorForHB  = color rgb <0.560784, 0.168627,0.588235>;
+#declare AtomRadiusForHB  = 1.170000;
+#declare ColorForLP  = color rgb <0.615686, 0.105882,0.509804>;
+#declare AtomRadiusForLP  = 1.170000;
+#declare ColorForHB  = color rgb <0.670588, 0.105882,0.470588>;
+#declare AtomRadiusForHB  = 1.170000;
+#declare ColorForNO  = color rgb <0.725490, 0.043137,0.431373>;
+#declare AtomRadiusForNO  = 2.100000;
+#declare ColorForLR  = color rgb <0.780392, 0.000000,0.392157>;
+#declare AtomRadiusForLR  = 2.100000;
+#declare ColorForQ  = color rgb <0.392157, 0.392157,0.392157>;
+#declare AtomRadiusForQ  = 0.001000;
+#declare ColorFor  = color rgb <0.000000, 0.000000,0.000000>;
+#declare AtomRadiusFor  = 0.000000;
+union {
+union {
+sphere {< 10.629885 , 4.834015 , 6.130850 > , AtomRadius pigment {color ColorForIN}}
+sphere {< 10.629885 , 2.897934 , 9.196275 > , AtomRadius pigment {color ColorForIN}}
+sphere {< 4.834015 , 10.629885 , 6.130850 > , AtomRadius pigment {color ColorForIN}}
+sphere {< 4.834015 , 12.565965 , 9.196275 > , AtomRadius pigment {color ColorForIN}}
+sphere {< 10.629885 , 2.897935 , 9.196275 > , AtomRadius pigment {color ColorForIN}}
+sphere {< 4.834015 , 10.629885 , 6.130850 > , AtomRadius pigment {color ColorForIN}}
+sphere {< 4.834015 , 12.565965 , 9.196275 > , AtomRadius pigment {color ColorForIN}}
+sphere {< 10.629885 , 4.834015 , 6.130850 > , AtomRadius pigment {color ColorForIN}}
+sphere {< 2.897934 , 12.565965 , 12.261700 > , AtomRadius pigment {color ColorForIN}}
+sphere {< 2.897935 , 10.629885 , 3.065425 > , AtomRadius pigment {color ColorForIN}}
+sphere {< 12.565965 , 2.897935 , 12.261700 > , AtomRadius pigment {color ColorForIN}}
+sphere {< 12.565965 , 4.834015 , 3.065425 > , AtomRadius pigment {color ColorForIN}}
+sphere {< 2.897934 , 10.629885 , 3.065425 > , AtomRadius pigment {color ColorForIN}}
+sphere {< 12.565965 , 2.897934 , 0.000000 > , AtomRadius pigment {color ColorForIN}}
+sphere {< 12.565965 , 4.834015 , 3.065425 > , AtomRadius pigment {color ColorForIN}}
+sphere {< 2.897935 , 12.565965 , 0.000000 > , AtomRadius pigment {color ColorForIN}}
+sphere {< 11.712358 , 3.865975 , 7.663562 > , AtomRadius pigment {color ColorForO}}
+sphere {< 11.597925 , 3.980408 , 10.728987 > , AtomRadius pigment {color ColorForO}}
+sphere {< 3.751542 , 11.597925 , 7.663562 > , AtomRadius pigment {color ColorForO}}
+sphere {< 3.865975 , 11.483492 , 10.728987 > , AtomRadius pigment {color ColorForO}}
+sphere {< 11.712358 , 3.865975 , 7.663562 > , AtomRadius pigment {color ColorForO}}
+sphere {< 3.865975 , 11.712358 , 4.598137 > , AtomRadius pigment {color ColorForO}}
+sphere {< 3.751542 , 11.597925 , 7.663562 > , AtomRadius pigment {color ColorForO}}
+sphere {< 11.597925 , 3.751542 , 4.598137 > , AtomRadius pigment {color ColorForO}}
+sphere {< 3.980408 , 11.597925 , 1.532712 > , AtomRadius pigment {color ColorForO}}
+sphere {< 3.865975 , 11.712358 , 4.598137 > , AtomRadius pigment {color ColorForO}}
+sphere {< 11.483492 , 3.865975 , 1.532712 > , AtomRadius pigment {color ColorForO}}
+sphere {< 11.597925 , 3.751542 , 4.598137 > , AtomRadius pigment {color ColorForO}}
+sphere {< 3.980408 , 11.597925 , 1.532712 > , AtomRadius pigment {color ColorForO}}
+sphere {< 11.597925 , 3.980408 , 10.728987 > , AtomRadius pigment {color ColorForO}}
+sphere {< 11.483492 , 3.865975 , 1.532712 > , AtomRadius pigment {color ColorForO}}
+sphere {< 3.865975 , 11.483492 , 10.728987 > , AtomRadius pigment {color ColorForO}}
+sphere {< 9.531948 , 5.933498 , 7.539719 > , AtomRadius pigment {color ColorForO}}
+sphere {< 9.530401 , 1.799998 , 10.605144 > , AtomRadius pigment {color ColorForO}}
+sphere {< 5.931952 , 9.530401 , 7.539719 > , AtomRadius pigment {color ColorForO}}
+sphere {< 5.933498 , 13.663901 , 10.605144 > , AtomRadius pigment {color ColorForO}}
+sphere {< 9.531948 , 1.798451 , 7.787405 > , AtomRadius pigment {color ColorForO}}
+sphere {< 5.933498 , 9.531948 , 4.721981 > , AtomRadius pigment {color ColorForO}}
+sphere {< 5.931952 , 13.665448 , 7.787405 > , AtomRadius pigment {color ColorForO}}
+sphere {< 9.530401 , 5.931952 , 4.721981 > , AtomRadius pigment {color ColorForO}}
+sphere {< 1.799998 , 13.665448 , 1.408869 > , AtomRadius pigment {color ColorForO}}
+sphere {< 1.798451 , 9.531948 , 4.474294 > , AtomRadius pigment {color ColorForO}}
+sphere {< 13.663901 , 1.798451 , 1.408869 > , AtomRadius pigment {color ColorForO}}
+sphere {< 13.665448 , 5.931952 , 4.474294 > , AtomRadius pigment {color ColorForO}}
+sphere {< 1.799998 , 9.530401 , 1.656556 > , AtomRadius pigment {color ColorForO}}
+sphere {< 13.665448 , 1.799998 , 10.852831 > , AtomRadius pigment {color ColorForO}}
+sphere {< 13.663901 , 5.933498 , 1.656556 > , AtomRadius pigment {color ColorForO}}
+sphere {< 1.798451 , 13.663901 , 10.852831 > , AtomRadius pigment {color ColorForO}}
+sphere {< 9.153082 , 4.470613 , 9.208536 > , AtomRadius pigment {color ColorForO}}
+sphere {< 10.993286 , 1.421132 , 0.012261 > , AtomRadius pigment {color ColorForO}}
+sphere {< 6.310818 , 10.993286 , 9.208536 > , AtomRadius pigment {color ColorForO}}
+sphere {< 4.470613 , 14.042768 , 0.012261 > , AtomRadius pigment {color ColorForO}}
+sphere {< 9.153082 , 3.261337 , 6.118588 > , AtomRadius pigment {color ColorForO}}
+sphere {< 4.470613 , 9.153082 , 3.053163 > , AtomRadius pigment {color ColorForO}}
+sphere {< 6.310818 , 12.202563 , 6.118588 > , AtomRadius pigment {color ColorForO}}
+sphere {< 10.993286 , 6.310818 , 3.053163 > , AtomRadius pigment {color ColorForO}}
+sphere {< 1.421132 , 12.202563 , 3.077686 > , AtomRadius pigment {color ColorForO}}
+sphere {< 3.261337 , 9.153082 , 6.143111 > , AtomRadius pigment {color ColorForO}}
+sphere {< 14.042768 , 3.261337 , 3.077686 > , AtomRadius pigment {color ColorForO}}
+sphere {< 12.202563 , 6.310818 , 6.143111 > , AtomRadius pigment {color ColorForO}}
+sphere {< 1.421132 , 10.993286 , 12.249439 > , AtomRadius pigment {color ColorForO}}
+sphere {< 12.202563 , 1.421132 , 9.184013 > , AtomRadius pigment {color ColorForO}}
+sphere {< 14.042768 , 4.470613 , 12.249439 > , AtomRadius pigment {color ColorForO}}
+sphere {< 3.261337 , 14.042768 , 9.184013 > , AtomRadius pigment {color ColorForO}}
+sphere {< 9.032464 , 5.621128 , 8.670247 > , AtomRadius pigment {color ColorForC}}
+sphere {< 9.842772 , 1.300514 , 11.735672 > , AtomRadius pigment {color ColorForC}}
+sphere {< 6.431436 , 9.842772 , 8.670247 > , AtomRadius pigment {color ColorForC}}
+sphere {< 5.621128 , 14.163385 , 11.735672 > , AtomRadius pigment {color ColorForC}}
+sphere {< 9.032464 , 2.110822 , 6.656877 > , AtomRadius pigment {color ColorForC}}
+sphere {< 5.621128 , 9.032464 , 3.591452 > , AtomRadius pigment {color ColorForC}}
+sphere {< 6.431436 , 13.353077 , 6.656877 > , AtomRadius pigment {color ColorForC}}
+sphere {< 9.842772 , 6.431436 , 3.591452 > , AtomRadius pigment {color ColorForC}}
+sphere {< 1.300514 , 13.353077 , 2.539397 > , AtomRadius pigment {color ColorForC}}
+sphere {< 2.110822 , 9.032464 , 5.604823 > , AtomRadius pigment {color ColorForC}}
+sphere {< 14.163385 , 2.110822 , 2.539397 > , AtomRadius pigment {color ColorForC}}
+sphere {< 13.353077 , 6.431436 , 5.604823 > , AtomRadius pigment {color ColorForC}}
+sphere {< 1.300514 , 9.842772 , 0.526027 > , AtomRadius pigment {color ColorForC}}
+sphere {< 13.353077 , 1.300514 , 9.722302 > , AtomRadius pigment {color ColorForC}}
+sphere {< 14.163385 , 5.621128 , 0.526027 > , AtomRadius pigment {color ColorForC}}
+sphere {< 2.110822 , 14.163385 , 9.722302 > , AtomRadius pigment {color ColorForC}}
+sphere {< 8.273650 , 6.644219 , 9.394915 > , AtomRadius pigment {color ColorForC}}
+sphere {< 8.819681 , 0.541701 , 0.198640 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.190249 , 8.819681 , 9.394915 > , AtomRadius pigment {color ColorForC}}
+sphere {< 6.644219 , 14.922199 , 0.198640 > , AtomRadius pigment {color ColorForC}}
+sphere {< 8.273650 , 1.087731 , 5.932210 > , AtomRadius pigment {color ColorForC}}
+sphere {< 6.644219 , 8.273650 , 2.866785 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.190249 , 14.376168 , 5.932210 > , AtomRadius pigment {color ColorForC}}
+sphere {< 8.819681 , 7.190249 , 2.866785 > , AtomRadius pigment {color ColorForC}}
+sphere {< 0.541701 , 14.376168 , 3.264065 > , AtomRadius pigment {color ColorForC}}
+sphere {< 1.087731 , 8.273650 , 6.329489 > , AtomRadius pigment {color ColorForC}}
+sphere {< 14.922199 , 1.087731 , 3.264065 > , AtomRadius pigment {color ColorForC}}
+sphere {< 14.376168 , 7.190249 , 6.329489 > , AtomRadius pigment {color ColorForC}}
+sphere {< 0.541701 , 8.819681 , 12.063060 > , AtomRadius pigment {color ColorForC}}
+sphere {< 14.376168 , 0.541701 , 8.997635 > , AtomRadius pigment {color ColorForC}}
+sphere {< 14.922199 , 6.644219 , 12.063060 > , AtomRadius pigment {color ColorForC}}
+sphere {< 1.087731 , 14.922199 , 8.997635 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.731950 , 7.731950 , 8.693545 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.731950 , 15.463900 , 11.758970 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.731950 , 7.731950 , 8.693545 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.731950 , 0.000000 , 11.758970 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.731950 , 0.000000 , 6.633580 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.731950 , 7.731950 , 3.568155 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.731950 , 15.463900 , 6.633580 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.731950 , 7.731950 , 3.568155 > , AtomRadius pigment {color ColorForC}}
+sphere {< 15.463900 , 15.463900 , 2.562695 > , AtomRadius pigment {color ColorForC}}
+sphere {< 0.000000 , 7.731950 , 5.628120 > , AtomRadius pigment {color ColorForC}}
+sphere {< 0.000000 , 0.000000 , 2.562695 > , AtomRadius pigment {color ColorForC}}
+sphere {< 15.463900 , 7.731950 , 5.628120 > , AtomRadius pigment {color ColorForC}}
+sphere {< 15.463900 , 7.731950 , 0.502730 > , AtomRadius pigment {color ColorForC}}
+sphere {< 15.463900 , 15.463900 , 9.699004 > , AtomRadius pigment {color ColorForC}}
+sphere {< 0.000000 , 7.731950 , 0.502730 > , AtomRadius pigment {color ColorForC}}
+sphere {< 0.000000 , 0.000000 , 9.699004 > , AtomRadius pigment {color ColorForC}}
+sphere {< 8.273650 , 6.644219 , 10.797652 > , AtomRadius pigment {color ColorForC}}
+sphere {< 8.819681 , 0.541701 , 1.601378 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.190249 , 8.819681 , 10.797652 > , AtomRadius pigment {color ColorForC}}
+sphere {< 6.644219 , 14.922199 , 1.601378 > , AtomRadius pigment {color ColorForC}}
+sphere {< 8.273650 , 1.087731 , 4.529472 > , AtomRadius pigment {color ColorForC}}
+sphere {< 6.644219 , 8.273650 , 1.464047 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.190249 , 14.376168 , 4.529472 > , AtomRadius pigment {color ColorForC}}
+sphere {< 8.819681 , 7.190249 , 1.464047 > , AtomRadius pigment {color ColorForC}}
+sphere {< 0.541701 , 14.376168 , 4.666802 > , AtomRadius pigment {color ColorForC}}
+sphere {< 1.087731 , 8.273650 , 7.732227 > , AtomRadius pigment {color ColorForC}}
+sphere {< 14.922199 , 1.087731 , 4.666802 > , AtomRadius pigment {color ColorForC}}
+sphere {< 14.376168 , 7.190249 , 7.732227 > , AtomRadius pigment {color ColorForC}}
+sphere {< 0.541701 , 8.819681 , 10.660322 > , AtomRadius pigment {color ColorForC}}
+sphere {< 14.376168 , 0.541701 , 7.594897 > , AtomRadius pigment {color ColorForC}}
+sphere {< 14.922199 , 6.644219 , 10.660322 > , AtomRadius pigment {color ColorForC}}
+sphere {< 1.087731 , 14.922199 , 7.594897 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.731950 , 7.731950 , 11.499390 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.731950 , 15.463900 , 2.303115 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.731950 , 7.731950 , 11.499390 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.731950 , 0.000000 , 2.303115 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.731950 , 0.000000 , 3.827735 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.731950 , 7.731950 , 0.762310 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.731950 , 15.463900 , 3.827735 > , AtomRadius pigment {color ColorForC}}
+sphere {< 7.731950 , 7.731950 , 0.762310 > , AtomRadius pigment {color ColorForC}}
+sphere {< 15.463900 , 15.463900 , 5.368540 > , AtomRadius pigment {color ColorForC}}
+sphere {< 0.000000 , 7.731950 , 8.433965 > , AtomRadius pigment {color ColorForC}}
+sphere {< 0.000000 , 0.000000 , 5.368540 > , AtomRadius pigment {color ColorForC}}
+sphere {< 15.463900 , 7.731950 , 8.433965 > , AtomRadius pigment {color ColorForC}}
+sphere {< 15.463900 , 7.731950 , 9.958585 > , AtomRadius pigment {color ColorForC}}
+sphere {< 15.463900 , 15.463900 , 6.893160 > , AtomRadius pigment {color ColorForC}}
+sphere {< 0.000000 , 7.731950 , 9.958585 > , AtomRadius pigment {color ColorForC}}
+sphere {< 0.000000 , 0.000000 , 6.893160 > , AtomRadius pigment {color ColorForC}}
+sphere {< 12.661840 , 3.865975 , 7.663562 > , AtomRadius pigment {color ColorForH}}
+sphere {< 11.597925 , 4.929891 , 10.728987 > , AtomRadius pigment {color ColorForH}}
+sphere {< 2.802059 , 11.597925 , 7.663562 > , AtomRadius pigment {color ColorForH}}
+sphere {< 3.865975 , 10.534009 , 10.728987 > , AtomRadius pigment {color ColorForH}}
+sphere {< 12.661840 , 3.865975 , 7.663562 > , AtomRadius pigment {color ColorForH}}
+sphere {< 3.865975 , 12.661840 , 4.598137 > , AtomRadius pigment {color ColorForH}}
+sphere {< 2.802059 , 11.597925 , 7.663562 > , AtomRadius pigment {color ColorForH}}
+sphere {< 11.597925 , 2.802059 , 4.598137 > , AtomRadius pigment {color ColorForH}}
+sphere {< 4.929891 , 11.597925 , 1.532712 > , AtomRadius pigment {color ColorForH}}
+sphere {< 3.865975 , 12.661840 , 4.598137 > , AtomRadius pigment {color ColorForH}}
+sphere {< 10.534009 , 3.865975 , 1.532712 > , AtomRadius pigment {color ColorForH}}
+sphere {< 11.597925 , 2.802059 , 4.598137 > , AtomRadius pigment {color ColorForH}}
+sphere {< 4.929891 , 11.597925 , 1.532712 > , AtomRadius pigment {color ColorForH}}
+sphere {< 11.597925 , 4.929891 , 10.728987 > , AtomRadius pigment {color ColorForH}}
+sphere {< 10.534009 , 3.865975 , 1.532712 > , AtomRadius pigment {color ColorForH}}
+sphere {< 3.865975 , 10.534009 , 10.728987 > , AtomRadius pigment {color ColorForH}}
+sphere {< 7.731950 , 7.731950 , 7.642718 > , AtomRadius pigment {color ColorForH}}
+sphere {< 7.731950 , 15.463900 , 10.708142 > , AtomRadius pigment {color ColorForH}}
+sphere {< 7.731950 , 7.731950 , 7.642718 > , AtomRadius pigment {color ColorForH}}
+sphere {< 7.731950 , 0.000000 , 10.708142 > , AtomRadius pigment {color ColorForH}}
+sphere {< 7.731950 , 0.000000 , 7.684407 > , AtomRadius pigment {color ColorForH}}
+sphere {< 7.731950 , 7.731950 , 4.618982 > , AtomRadius pigment {color ColorForH}}
+sphere {< 7.731950 , 15.463900 , 7.684407 > , AtomRadius pigment {color ColorForH}}
+sphere {< 7.731950 , 7.731950 , 4.618982 > , AtomRadius pigment {color ColorForH}}
+sphere {< 15.463900 , 15.463900 , 1.511868 > , AtomRadius pigment {color ColorForH}}
+sphere {< 0.000000 , 7.731950 , 4.577293 > , AtomRadius pigment {color ColorForH}}
+sphere {< 0.000000 , 0.000000 , 1.511868 > , AtomRadius pigment {color ColorForH}}
+sphere {< 15.463900 , 7.731950 , 4.577293 > , AtomRadius pigment {color ColorForH}}
+sphere {< 15.463900 , 7.731950 , 1.553557 > , AtomRadius pigment {color ColorForH}}
+sphere {< 15.463900 , 15.463900 , 10.749832 > , AtomRadius pigment {color ColorForH}}
+sphere {< 0.000000 , 7.731950 , 1.553557 > , AtomRadius pigment {color ColorForH}}
+sphere {< 0.000000 , 0.000000 , 10.749832 > , AtomRadius pigment {color ColorForH}}
+sphere {< 8.678341 , 5.829890 , 11.322453 > , AtomRadius pigment {color ColorForH}}
+sphere {< 9.634010 , 0.946391 , 2.126178 > , AtomRadius pigment {color ColorForH}}
+sphere {< 6.785559 , 9.634010 , 11.322453 > , AtomRadius pigment {color ColorForH}}
+sphere {< 5.829890 , 14.517509 , 2.126178 > , AtomRadius pigment {color ColorForH}}
+sphere {< 8.678341 , 1.902060 , 4.004671 > , AtomRadius pigment {color ColorForH}}
+sphere {< 5.829890 , 8.678341 , 0.939246 > , AtomRadius pigment {color ColorForH}}
+sphere {< 6.785559 , 13.561839 , 4.004671 > , AtomRadius pigment {color ColorForH}}
+sphere {< 9.634010 , 6.785559 , 0.939246 > , AtomRadius pigment {color ColorForH}}
+sphere {< 0.946391 , 13.561839 , 5.191603 > , AtomRadius pigment {color ColorForH}}
+sphere {< 1.902060 , 8.678341 , 8.257029 > , AtomRadius pigment {color ColorForH}}
+sphere {< 14.517509 , 1.902060 , 5.191603 > , AtomRadius pigment {color ColorForH}}
+sphere {< 13.561839 , 6.785559 , 8.257029 > , AtomRadius pigment {color ColorForH}}
+sphere {< 0.946391 , 9.634010 , 10.135522 > , AtomRadius pigment {color ColorForH}}
+sphere {< 13.561839 , 0.946391 , 7.070096 > , AtomRadius pigment {color ColorForH}}
+sphere {< 14.517509 , 5.829890 , 10.135522 > , AtomRadius pigment {color ColorForH}}
+sphere {< 1.902060 , 14.517509 , 7.070096 > , AtomRadius pigment {color ColorForH}}
+cylinder{< 11.712358, 3.865975, 7.663562 > , < 10.629887, 4.834015, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.712358, 3.865975, 7.663562 > , < 10.629887, 4.834015, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 3.751542, 4.598137 > , < 10.629887, 4.834015, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 3.751542, 4.598137 > , < 10.629887, 4.834015, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.531948, 5.933498, 7.539719 > , < 10.629887, 4.834015, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.530401, 5.931952, 4.721981 > , < 10.629887, 4.834015, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.153082, 3.261337, 6.118588 > , < 10.629887, 4.834015, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 12.202563, 6.310818, 6.143111 > , < 10.629887, 4.834015, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.712358, 3.865975, 7.663562 > , < 10.629887, 2.897935, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 3.980408, 10.728987 > , < 10.629887, 2.897935, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.712358, 3.865975, 7.663562 > , < 10.629887, 2.897935, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 3.980408, 10.728987 > , < 10.629887, 2.897935, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.530401, 1.799998, 10.605144 > , < 10.629887, 2.897935, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.531948, 1.798451, 7.787405 > , < 10.629887, 2.897935, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.153082, 4.470613, 9.208536 > , < 10.629887, 2.897935, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 12.202563, 1.421132, 9.184013 > , < 10.629887, 2.897935, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.751542, 11.597925, 7.663562 > , < 4.834016, 10.629887, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 11.712358, 4.598137 > , < 4.834016, 10.629887, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.751542, 11.597925, 7.663562 > , < 4.834016, 10.629887, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 11.712358, 4.598137 > , < 4.834016, 10.629887, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 5.931952, 9.530401, 7.539719 > , < 4.834016, 10.629887, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 5.933498, 9.531948, 4.721981 > , < 4.834016, 10.629887, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 6.310818, 12.202563, 6.118588 > , < 4.834016, 10.629887, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.261337, 9.153082, 6.143111 > , < 4.834016, 10.629887, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.751542, 11.597925, 7.663562 > , < 4.834015, 12.565966, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 11.483492, 10.728987 > , < 4.834015, 12.565966, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.751542, 11.597925, 7.663562 > , < 4.834015, 12.565966, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 11.483492, 10.728987 > , < 4.834015, 12.565966, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 5.933498, 13.663901, 10.605144 > , < 4.834015, 12.565966, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 5.931952, 13.665448, 7.787405 > , < 4.834015, 12.565966, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 6.310818, 10.993286, 9.208536 > , < 4.834015, 12.565966, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.261337, 14.042768, 9.184013 > , < 4.834015, 12.565966, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.712358, 3.865975, 7.663562 > , < 10.629887, 2.897935, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 3.980408, 10.728987 > , < 10.629887, 2.897935, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.712358, 3.865975, 7.663562 > , < 10.629887, 2.897935, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 3.980408, 10.728987 > , < 10.629887, 2.897935, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.530401, 1.799998, 10.605144 > , < 10.629887, 2.897935, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.531948, 1.798451, 7.787405 > , < 10.629887, 2.897935, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.153082, 4.470613, 9.208536 > , < 10.629887, 2.897935, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 12.202563, 1.421132, 9.184013 > , < 10.629887, 2.897935, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.751542, 11.597925, 7.663562 > , < 4.834015, 10.629887, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 11.712358, 4.598137 > , < 4.834015, 10.629887, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.751542, 11.597925, 7.663562 > , < 4.834015, 10.629887, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 11.712358, 4.598137 > , < 4.834015, 10.629887, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 5.931952, 9.530401, 7.539719 > , < 4.834015, 10.629887, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 5.933498, 9.531948, 4.721981 > , < 4.834015, 10.629887, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 6.310818, 12.202563, 6.118588 > , < 4.834015, 10.629887, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.261337, 9.153082, 6.143111 > , < 4.834015, 10.629887, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.751542, 11.597925, 7.663562 > , < 4.834016, 12.565966, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 11.483492, 10.728987 > , < 4.834016, 12.565966, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.751542, 11.597925, 7.663562 > , < 4.834016, 12.565966, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 11.483492, 10.728987 > , < 4.834016, 12.565966, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 5.933498, 13.663901, 10.605144 > , < 4.834016, 12.565966, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 5.931952, 13.665448, 7.787405 > , < 4.834016, 12.565966, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 6.310818, 10.993286, 9.208536 > , < 4.834016, 12.565966, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.261337, 14.042768, 9.184013 > , < 4.834016, 12.565966, 9.196275>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.712358, 3.865975, 7.663562 > , < 10.629887, 4.834016, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.712358, 3.865975, 7.663562 > , < 10.629887, 4.834016, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 3.751542, 4.598137 > , < 10.629887, 4.834016, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 3.751542, 4.598137 > , < 10.629887, 4.834016, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.531948, 5.933498, 7.539719 > , < 10.629887, 4.834016, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.530401, 5.931952, 4.721981 > , < 10.629887, 4.834016, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.153082, 3.261337, 6.118588 > , < 10.629887, 4.834016, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 12.202563, 6.310818, 6.143111 > , < 10.629887, 4.834016, 6.130850>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.980408, 11.597925, 1.532712 > , < 2.897935, 12.565966, 0.000000>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.980408, 11.597925, 1.532712 > , < 2.897935, 12.565966, 0.000000>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.799998, 13.665448, 1.408869 > , < 2.897935, 12.565966, 0.000000>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 4.470613, 14.042768, 0.012261 > , < 2.897935, 12.565966, 0.000000>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 11.483492, 10.728987 > , < 2.897935, 12.565966, 12.261700>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 11.483492, 10.728987 > , < 2.897935, 12.565966, 12.261700>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.798451, 13.663901, 10.852831 > , < 2.897935, 12.565966, 12.261700>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.421132, 10.993286, 12.249439 > , < 2.897935, 12.565966, 12.261700>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 11.712358, 4.598137 > , < 2.897935, 10.629887, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.980408, 11.597925, 1.532712 > , < 2.897935, 10.629887, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 11.712358, 4.598137 > , < 2.897935, 10.629887, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.980408, 11.597925, 1.532712 > , < 2.897935, 10.629887, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.798451, 9.531948, 4.474294 > , < 2.897935, 10.629887, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.799998, 9.530401, 1.656556 > , < 2.897935, 10.629887, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 4.470613, 9.153082, 3.053163 > , < 2.897935, 10.629887, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.421132, 12.202563, 3.077686 > , < 2.897935, 10.629887, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.483492, 3.865975, 1.532712 > , < 12.565966, 2.897935, 0.000000>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.483492, 3.865975, 1.532712 > , < 12.565966, 2.897935, 0.000000>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 13.663901, 1.798451, 1.408869 > , < 12.565966, 2.897935, 0.000000>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 10.993286, 1.421132, 0.012261 > , < 12.565966, 2.897935, 0.000000>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 3.980408, 10.728987 > , < 12.565966, 2.897935, 12.261700>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 3.980408, 10.728987 > , < 12.565966, 2.897935, 12.261700>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 13.665448, 1.799998, 10.852831 > , < 12.565966, 2.897935, 12.261700>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.042768, 4.470613, 12.249439 > , < 12.565966, 2.897935, 12.261700>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 3.751542, 4.598137 > , < 12.565966, 4.834016, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.483492, 3.865975, 1.532712 > , < 12.565966, 4.834016, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 3.751542, 4.598137 > , < 12.565966, 4.834016, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.483492, 3.865975, 1.532712 > , < 12.565966, 4.834016, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 13.665448, 5.931952, 4.474294 > , < 12.565966, 4.834016, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 13.663901, 5.933498, 1.656556 > , < 12.565966, 4.834016, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 10.993286, 6.310818, 3.053163 > , < 12.565966, 4.834016, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.042768, 3.261337, 3.077686 > , < 12.565966, 4.834016, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 11.712358, 4.598137 > , < 2.897935, 10.629887, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.980408, 11.597925, 1.532712 > , < 2.897935, 10.629887, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 11.712358, 4.598137 > , < 2.897935, 10.629887, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.980408, 11.597925, 1.532712 > , < 2.897935, 10.629887, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.798451, 9.531948, 4.474294 > , < 2.897935, 10.629887, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.799998, 9.530401, 1.656556 > , < 2.897935, 10.629887, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 4.470613, 9.153082, 3.053163 > , < 2.897935, 10.629887, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.421132, 12.202563, 3.077686 > , < 2.897935, 10.629887, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.483492, 3.865975, 1.532712 > , < 12.565966, 2.897935, 0.000000>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.483492, 3.865975, 1.532712 > , < 12.565966, 2.897935, 0.000000>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 13.663901, 1.798451, 1.408869 > , < 12.565966, 2.897935, 0.000000>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 10.993286, 1.421132, 0.012261 > , < 12.565966, 2.897935, 0.000000>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 3.980408, 10.728987 > , < 12.565966, 2.897935, 12.261700>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 3.980408, 10.728987 > , < 12.565966, 2.897935, 12.261700>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 13.665448, 1.799998, 10.852831 > , < 12.565966, 2.897935, 12.261700>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.042768, 4.470613, 12.249439 > , < 12.565966, 2.897935, 12.261700>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 3.751542, 4.598137 > , < 12.565966, 4.834015, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.483492, 3.865975, 1.532712 > , < 12.565966, 4.834015, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 3.751542, 4.598137 > , < 12.565966, 4.834015, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.483492, 3.865975, 1.532712 > , < 12.565966, 4.834015, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 13.665448, 5.931952, 4.474294 > , < 12.565966, 4.834015, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 13.663901, 5.933498, 1.656556 > , < 12.565966, 4.834015, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 10.993286, 6.310818, 3.053163 > , < 12.565966, 4.834015, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.042768, 3.261337, 3.077686 > , < 12.565966, 4.834015, 3.065425>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.980408, 11.597925, 1.532712 > , < 2.897935, 12.565966, 0.000000>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.980408, 11.597925, 1.532712 > , < 2.897935, 12.565966, 0.000000>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.799998, 13.665448, 1.408869 > , < 2.897935, 12.565966, 0.000000>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 4.470613, 14.042768, 0.012261 > , < 2.897935, 12.565966, 0.000000>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 11.483492, 10.728987 > , < 2.897935, 12.565966, 12.261700>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 11.483492, 10.728987 > , < 2.897935, 12.565966, 12.261700>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.798451, 13.663901, 10.852831 > , < 2.897935, 12.565966, 12.261700>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.421132, 10.993286, 12.249439 > , < 2.897935, 12.565966, 12.261700>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 12.661840, 3.865975, 7.663562 > , < 11.712359, 3.865975, 7.663562>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 12.661840, 3.865975, 7.663562 > , < 11.712359, 3.865975, 7.663562>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 4.929891, 10.728987 > , < 11.597926, 3.980409, 10.728987>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 4.929891, 10.728987 > , < 11.597926, 3.980409, 10.728987>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 2.802059, 11.597925, 7.663562 > , < 3.751543, 11.597926, 7.663562>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 2.802059, 11.597925, 7.663562 > , < 3.751543, 11.597926, 7.663562>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 10.534009, 10.728987 > , < 3.865975, 11.483493, 10.728987>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 10.534009, 10.728987 > , < 3.865975, 11.483493, 10.728987>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 12.661840, 3.865975, 7.663562 > , < 11.712359, 3.865975, 7.663562>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 12.661840, 3.865975, 7.663562 > , < 11.712359, 3.865975, 7.663562>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 12.661840, 4.598137 > , < 3.865975, 11.712359, 4.598137>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 12.661840, 4.598137 > , < 3.865975, 11.712359, 4.598137>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 2.802059, 11.597925, 7.663562 > , < 3.751543, 11.597926, 7.663562>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 2.802059, 11.597925, 7.663562 > , < 3.751543, 11.597926, 7.663562>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 2.802059, 4.598137 > , < 11.597926, 3.751543, 4.598137>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 2.802059, 4.598137 > , < 11.597926, 3.751543, 4.598137>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 4.929891, 11.597925, 1.532712 > , < 3.980409, 11.597926, 1.532712>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 4.929891, 11.597925, 1.532712 > , < 3.980409, 11.597926, 1.532712>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 12.661840, 4.598137 > , < 3.865975, 11.712359, 4.598137>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 12.661840, 4.598137 > , < 3.865975, 11.712359, 4.598137>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 10.534009, 3.865975, 1.532712 > , < 11.483493, 3.865975, 1.532712>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 10.534009, 3.865975, 1.532712 > , < 11.483493, 3.865975, 1.532712>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 2.802059, 4.598137 > , < 11.597926, 3.751543, 4.598137>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 2.802059, 4.598137 > , < 11.597926, 3.751543, 4.598137>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 4.929891, 11.597925, 1.532712 > , < 3.980409, 11.597926, 1.532712>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 4.929891, 11.597925, 1.532712 > , < 3.980409, 11.597926, 1.532712>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 4.929891, 10.728987 > , < 11.597926, 3.980409, 10.728987>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 11.597925, 4.929891, 10.728987 > , < 11.597926, 3.980409, 10.728987>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 10.534009, 3.865975, 1.532712 > , < 11.483493, 3.865975, 1.532712>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 10.534009, 3.865975, 1.532712 > , < 11.483493, 3.865975, 1.532712>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 10.534009, 10.728987 > , < 3.865975, 11.483493, 10.728987>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 3.865975, 10.534009, 10.728987 > , < 3.865975, 11.483493, 10.728987>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.032464, 5.621128, 8.670247 > , < 9.531949, 5.933499, 7.539719>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.842772, 1.300514, 11.735672 > , < 9.530402, 1.799998, 10.605144>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 6.431436, 9.842772, 8.670247 > , < 5.931953, 9.530402, 7.539719>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 5.621128, 14.163385, 11.735672 > , < 5.933499, 13.663902, 10.605144>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.032464, 2.110822, 6.656877 > , < 9.531949, 1.798451, 7.787405>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 5.621128, 9.032464, 3.591452 > , < 5.933499, 9.531949, 4.721981>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 6.431436, 13.353077, 6.656877 > , < 5.931953, 13.665449, 7.787405>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.842772, 6.431436, 3.591452 > , < 9.530402, 5.931953, 4.721981>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.300514, 13.353077, 2.539397 > , < 1.799998, 13.665449, 1.408869>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 2.110822, 9.032464, 5.604823 > , < 1.798451, 9.531949, 4.474294>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.163385, 2.110822, 2.539397 > , < 13.663902, 1.798451, 1.408869>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 13.353077, 6.431436, 5.604823 > , < 13.665449, 5.931953, 4.474294>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.300514, 9.842772, 0.526027 > , < 1.799998, 9.530402, 1.656556>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 13.353077, 1.300514, 9.722302 > , < 13.665449, 1.799998, 10.852831>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.163385, 5.621128, 0.526027 > , < 13.663902, 5.933499, 1.656556>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 2.110822, 14.163385, 9.722302 > , < 1.798451, 13.663902, 10.852831>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.032464, 5.621128, 8.670247 > , < 9.153083, 4.470613, 9.208536>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.842772, 1.300514, 11.735672 > , < 10.993287, 1.421132, 12.273960>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 6.431436, 9.842772, 8.670247 > , < 6.310819, 10.993287, 9.208536>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 5.621128, 14.163385, 11.735672 > , < 4.470613, 14.042769, 12.273960>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.032464, 2.110822, 6.656877 > , < 9.153083, 3.261337, 6.118588>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 5.621128, 9.032464, 3.591452 > , < 4.470613, 9.153083, 3.053163>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 6.431436, 13.353077, 6.656877 > , < 6.310819, 12.202565, 6.118588>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.842772, 6.431436, 3.591452 > , < 10.993287, 6.310819, 3.053163>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.300514, 13.353077, 2.539397 > , < 1.421132, 12.202565, 3.077686>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 2.110822, 9.032464, 5.604823 > , < 3.261337, 9.153083, 6.143111>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.163385, 2.110822, 2.539397 > , < 14.042769, 3.261337, 3.077686>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 13.353077, 6.431436, 5.604823 > , < 12.202565, 6.310819, 6.143111>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.300514, 9.842772, 0.526027 > , < 1.421132, 10.993287, -0.012260>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 13.353077, 1.300514, 9.722302 > , < 12.202565, 1.421132, 9.184013>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.163385, 5.621128, 0.526027 > , < 14.042769, 4.470613, -0.012260>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 2.110822, 14.163385, 9.722302 > , < 3.261337, 14.042769, 9.184013>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 8.273650, 6.644219, 9.394915 > , < 9.032465, 5.621128, 8.670247>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 8.819681, 0.541701, 0.198640 > , < 9.842773, 1.300514, -0.526027>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.190249, 8.819681, 9.394915 > , < 6.431436, 9.842773, 8.670247>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 6.644219, 14.922199, 0.198640 > , < 5.621128, 14.163386, -0.526027>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 8.273650, 1.087731, 5.932210 > , < 9.032465, 2.110822, 6.656877>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 6.644219, 8.273650, 2.866785 > , < 5.621128, 9.032465, 3.591452>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.190249, 14.376168, 5.932210 > , < 6.431436, 13.353078, 6.656877>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 8.819681, 7.190249, 2.866785 > , < 9.842773, 6.431436, 3.591452>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.541701, 14.376168, 3.264065 > , < 1.300514, 13.353078, 2.539397>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.087731, 8.273650, 6.329489 > , < 2.110822, 9.032465, 5.604823>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.922199, 1.087731, 3.264065 > , < 14.163386, 2.110822, 2.539397>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.376168, 7.190249, 6.329489 > , < 13.353078, 6.431436, 5.604823>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.541701, 8.819681, 12.063060 > , < 1.300514, 9.842773, 12.787727>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.376168, 0.541701, 8.997635 > , < 13.353078, 1.300514, 9.722302>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.922199, 6.644219, 12.063060 > , < 14.163386, 5.621128, 12.787727>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.087731, 14.922199, 8.997635 > , < 2.110822, 14.163386, 9.722302>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 8.693545 > , < 8.273651, 6.644219, 9.394915>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 8.693545 > , < 8.273651, 6.644219, 9.394915>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 8.273650, 6.644219, 10.797652 > , < 8.273651, 6.644219, 9.394915>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 8.819681, 0.541701, 1.601378 > , < 8.819682, 0.541701, 0.198640>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 0.000000, 11.758970 > , < 8.819682, 0.541701, 12.460340>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 15.463900, 11.758970 > , < 8.819682, 16.005600, 12.460340>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 8.693545 > , < 7.190250, 8.819682, 9.394915>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 8.693545 > , < 7.190250, 8.819682, 9.394915>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.190249, 8.819681, 10.797652 > , < 7.190250, 8.819682, 9.394915>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 0.000000, 11.758970 > , < 6.644219, -0.541699, 12.460340>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 6.644219, 14.922199, 1.601378 > , < 6.644219, 14.922201, 0.198640>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 15.463900, 11.758970 > , < 6.644219, 14.922201, 12.460340>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 0.000000, 6.633580 > , < 8.273651, 1.087731, 5.932210>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 8.273650, 1.087731, 4.529472 > , < 8.273651, 1.087731, 5.932210>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 15.463900, 6.633580 > , < 8.273651, 16.551630, 5.932210>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 3.568155 > , < 6.644219, 8.273651, 2.866785>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 3.568155 > , < 6.644219, 8.273651, 2.866785>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 6.644219, 8.273650, 1.464047 > , < 6.644219, 8.273651, 2.866785>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 0.000000, 6.633580 > , < 7.190250, -1.087730, 5.932210>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 15.463900, 6.633580 > , < 7.190250, 14.376169, 5.932210>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.190249, 14.376168, 4.529472 > , < 7.190250, 14.376169, 5.932210>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 3.568155 > , < 8.819682, 7.190250, 2.866785>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 3.568155 > , < 8.819682, 7.190250, 2.866785>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 8.819681, 7.190249, 1.464047 > , < 8.819682, 7.190250, 2.866785>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 0.000000, 2.562695 > , < 0.541701, -1.087730, 3.264065>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.541701, 14.376168, 4.666802 > , < 0.541701, 14.376169, 3.264065>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 15.463900, 2.562695 > , < 16.005600, 14.376169, 3.264065>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 7.731950, 5.628120 > , < 1.087731, 8.273651, 6.329489>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.087731, 8.273650, 7.732227 > , < 1.087731, 8.273651, 6.329489>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 7.731950, 5.628120 > , < 16.551630, 8.273651, 6.329489>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 0.000000, 2.562695 > , < -0.541699, 1.087731, 3.264065>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.922199, 1.087731, 4.666802 > , < 14.922201, 1.087731, 3.264065>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 15.463900, 2.562695 > , < 14.922201, 16.551630, 3.264065>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 7.731950, 5.628120 > , < -1.087730, 7.190250, 6.329489>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 7.731950, 5.628120 > , < 14.376169, 7.190250, 6.329489>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.376168, 7.190249, 7.732227 > , < 14.376169, 7.190250, 6.329489>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 7.731950, 0.502730 > , < 0.541701, 8.819682, -0.198640>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.541701, 8.819681, 10.660322 > , < 0.541701, 8.819682, 12.063060>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 7.731950, 0.502730 > , < 16.005600, 8.819682, -0.198640>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 0.000000, 9.699004 > , < -1.087730, 0.541701, 8.997635>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.376168, 0.541701, 7.594897 > , < 14.376169, 0.541701, 8.997635>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 15.463900, 9.699004 > , < 14.376169, 16.005600, 8.997635>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 7.731950, 0.502730 > , < -0.541699, 6.644219, -0.198640>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 7.731950, 0.502730 > , < 14.922201, 6.644219, -0.198640>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.922199, 6.644219, 10.660322 > , < 14.922201, 6.644219, 12.063060>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 0.000000, 9.699004 > , < 1.087731, -0.541699, 8.997635>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.087731, 14.922199, 7.594897 > , < 1.087731, 14.922201, 8.997635>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 15.463900, 9.699004 > , < 16.551630, 14.922201, 8.997635>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 7.642718 > , < 7.731951, 7.731951, 8.693545>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 7.642718 > , < 7.731951, 7.731951, 8.693545>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 0.000000, 10.708142 > , < 7.731951, 0.000002, 11.758970>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 15.463900, 10.708142 > , < 7.731951, 15.463902, 11.758970>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 7.642718 > , < 7.731951, 7.731951, 8.693545>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 7.642718 > , < 7.731951, 7.731951, 8.693545>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 0.000000, 10.708142 > , < 7.731951, 0.000000, 11.758970>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 15.463900, 10.708142 > , < 7.731951, 15.463900, 11.758970>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 0.000000, 7.684407 > , < 7.731951, 0.000000, 6.633580>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 15.463900, 7.684407 > , < 7.731951, 15.463900, 6.633580>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 4.618982 > , < 7.731951, 7.731951, 3.568155>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 4.618982 > , < 7.731951, 7.731951, 3.568155>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 0.000000, 7.684407 > , < 7.731951, 0.000002, 6.633580>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 15.463900, 7.684407 > , < 7.731951, 15.463902, 6.633580>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 4.618982 > , < 7.731951, 7.731951, 3.568155>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 4.618982 > , < 7.731951, 7.731951, 3.568155>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 0.000000, 1.511868 > , < 0.000002, 0.000002, 2.562695>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 15.463900, 1.511868 > , < 15.463902, 15.463902, 2.562695>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 7.731950, 4.577293 > , < 0.000000, 7.731951, 5.628120>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 7.731950, 4.577293 > , < 15.463900, 7.731951, 5.628120>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 0.000000, 1.511868 > , < 0.000000, 0.000000, 2.562695>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 15.463900, 1.511868 > , < 15.463900, 15.463900, 2.562695>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 7.731950, 4.577293 > , < 0.000002, 7.731951, 5.628120>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 7.731950, 4.577293 > , < 15.463902, 7.731951, 5.628120>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 7.731950, 1.553557 > , < 0.000002, 7.731951, 0.502730>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 7.731950, 1.553557 > , < 15.463902, 7.731951, 0.502730>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 0.000000, 10.749832 > , < 0.000002, 0.000002, 9.699004>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 15.463900, 10.749832 > , < 15.463902, 15.463902, 9.699004>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 7.731950, 1.553557 > , < 0.000000, 7.731951, 0.502730>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 7.731950, 1.553557 > , < 15.463900, 7.731951, 0.502730>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 0.000000, 10.749832 > , < 0.000000, 0.000000, 9.699004>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 15.463900, 10.749832 > , < 15.463900, 15.463900, 9.699004>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 11.499390 > , < 8.273651, 6.644219, 10.797652>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 11.499390 > , < 8.273651, 6.644219, 10.797652>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 8.678341, 5.829890, 11.322453 > , < 8.273651, 6.644219, 10.797652>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 0.000000, 2.303115 > , < 8.819682, 0.541701, 1.601378>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.634010, 0.946391, 2.126178 > , < 8.819682, 0.541701, 1.601378>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 15.463900, 2.303115 > , < 8.819682, 16.005600, 1.601378>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 11.499390 > , < 7.190250, 8.819682, 10.797652>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 11.499390 > , < 7.190250, 8.819682, 10.797652>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 6.785559, 9.634010, 11.322453 > , < 7.190250, 8.819682, 10.797652>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 0.000000, 2.303115 > , < 6.644219, -0.541699, 1.601378>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 15.463900, 2.303115 > , < 6.644219, 14.922201, 1.601378>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 5.829890, 14.517509, 2.126178 > , < 6.644219, 14.922201, 1.601378>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 0.000000, 3.827735 > , < 8.273651, 1.087731, 4.529472>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 8.678341, 1.902060, 4.004671 > , < 8.273651, 1.087731, 4.529472>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 15.463900, 3.827735 > , < 8.273651, 16.551630, 4.529472>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 0.762310 > , < 6.644219, 8.273651, 1.464047>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 0.762310 > , < 6.644219, 8.273651, 1.464047>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 5.829890, 8.678341, 0.939246 > , < 6.644219, 8.273651, 1.464047>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 0.000000, 3.827735 > , < 7.190250, -1.087730, 4.529472>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 15.463900, 3.827735 > , < 7.190250, 14.376169, 4.529472>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 6.785559, 13.561839, 4.004671 > , < 7.190250, 14.376169, 4.529472>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 0.762310 > , < 8.819682, 7.190250, 1.464047>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 0.762310 > , < 8.819682, 7.190250, 1.464047>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 9.634010, 6.785559, 0.939246 > , < 8.819682, 7.190250, 1.464047>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 0.000000, 5.368540 > , < 0.541701, -1.087730, 4.666802>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.946391, 13.561839, 5.191603 > , < 0.541701, 14.376169, 4.666802>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 15.463900, 5.368540 > , < 16.005600, 14.376169, 4.666802>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 7.731950, 8.433965 > , < 1.087731, 8.273651, 7.732227>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.902060, 8.678341, 8.257029 > , < 1.087731, 8.273651, 7.732227>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 7.731950, 8.433965 > , < 16.551630, 8.273651, 7.732227>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 0.000000, 5.368540 > , < -0.541699, 1.087731, 4.666802>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.517509, 1.902060, 5.191603 > , < 14.922201, 1.087731, 4.666802>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 15.463900, 5.368540 > , < 14.922201, 16.551630, 4.666802>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 7.731950, 8.433965 > , < -1.087730, 7.190250, 7.732227>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 7.731950, 8.433965 > , < 14.376169, 7.190250, 7.732227>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 13.561839, 6.785559, 8.257029 > , < 14.376169, 7.190250, 7.732227>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 7.731950, 9.958585 > , < 0.541701, 8.819682, 10.660322>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.946391, 9.634010, 10.135522 > , < 0.541701, 8.819682, 10.660322>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 7.731950, 9.958585 > , < 16.005600, 8.819682, 10.660322>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 0.000000, 6.893160 > , < -1.087730, 0.541701, 7.594897>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 13.561839, 0.946391, 7.070096 > , < 14.376169, 0.541701, 7.594897>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 15.463900, 6.893160 > , < 14.376169, 16.005600, 7.594897>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 7.731950, 9.958585 > , < -0.541699, 6.644219, 10.660322>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 7.731950, 9.958585 > , < 14.922201, 6.644219, 10.660322>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 14.517509, 5.829890, 10.135522 > , < 14.922201, 6.644219, 10.660322>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 0.000000, 6.893160 > , < 1.087731, -0.541699, 7.594897>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 1.902060, 14.517509, 7.070096 > , < 1.087731, 14.922201, 7.594897>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 15.463900, 6.893160 > , < 16.551630, 14.922201, 7.594897>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 0.762310 > , < 7.731951, 7.731951, -0.762310>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 0.762310 > , < 7.731951, 7.731951, -0.762310>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 0.000000, 3.827735 > , < 7.731951, 0.000002, 2.303115>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 15.463900, 3.827735 > , < 7.731951, 15.463902, 2.303115>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 0.762310 > , < 7.731951, 7.731951, -0.762310>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 7.731950, 0.762310 > , < 7.731951, 7.731951, -0.762310>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 0.000000, 3.827735 > , < 7.731951, 0.000000, 2.303115>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 7.731950, 15.463900, 3.827735 > , < 7.731951, 15.463900, 2.303115>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 0.000000, 6.893160 > , < 0.000002, 0.000002, 5.368540>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 15.463900, 6.893160 > , < 15.463902, 15.463902, 5.368540>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 7.731950, 9.958585 > , < 0.000000, 7.731951, 8.433965>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 7.731950, 9.958585 > , < 15.463900, 7.731951, 8.433965>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 0.000000, 6.893160 > , < 0.000000, 0.000000, 5.368540>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 15.463900, 6.893160 > , < 15.463900, 15.463900, 5.368540>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 7.731950, 9.958585 > , < 0.000002, 7.731951, 8.433965>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 15.463900, 7.731950, 9.958585 > , < 15.463902, 7.731951, 8.433965>, bondcylRadius pigment {color bondsColor}}
+cylinder{< 0.000000, 0.000000, 0.000000 > , < 15.463900, 0.000000, 0.000000>, cellcylRadius pigment {color rgb <1, 0, 0>}}
+cylinder{< 0.000000, 0.000000, 0.000000 > , < 0.000000, 15.463900, 0.000000>, cellcylRadius pigment {color rgb <0, 1, 0>}}
+cylinder{< 15.463900, 15.463900, 0.000000 > , < 15.463900, 0.000000, 0.000000>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
+cylinder{< 0.000000, 15.463900, 0.000000 > , < 15.463900, 15.463900, 0.000000>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
+cylinder{< 0.000000, 0.000000, 0.000000 > , < 0.000000, 0.000000, 12.261700>, cellcylRadius pigment {color rgb <0, 0, 1>}}
+cylinder{< 15.463900, 0.000000, 12.261700 > , < 15.463900, 0.000000, 0.000000>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
+cylinder{< 0.000000, 15.463900, 0.000000 > , < 0.000000, 15.463900, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
+cylinder{< 15.463900, 15.463900, 0.000000 > , < 15.463900, 15.463900, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
+cylinder{< 0.000000, 0.000000, 12.261700 > , < 15.463900, 0.000000, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
+cylinder{< 0.000000, 0.000000, 12.261700 > , < 0.000000, 15.463900, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
+cylinder{< 0.000000, 15.463900, 12.261700 > , < 15.463900, 15.463900, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
+cylinder{< 15.463900, 0.000000, 12.261700 > , < 15.463900, 15.463900, 12.261700>, cellcylRadius pigment {color rgb <0.8, 0.8, 0.8>}}
+rotate <rx,ry,rz>
+
+}

@@ -17,11 +17,15 @@
 #declare drx = 0;
 #declare dry = 0;
 #declare drz = 0;
-
+ 
+#declare tx = 10.070474;
+#declare ty = 3.766042;
+#declare tz = 5.967886; 
+    /*
 #declare tx = 0;
 #declare ty = 0;
 #declare tz = 0;
-
+      */
 global_settings {
   assumed_gamma 2.2
   ambient_light color rgb <1, 1, 1>
@@ -59,8 +63,8 @@ light_source {	// #2
   shadowless
 }     
 
-#include "MCE_atoms.inc
-
 #include "Diamond1.inc"
 #include "MCE.inc"
+
+#include "MCE_atoms.inc"
 

@@ -7,21 +7,26 @@
 */
 
 #declare rx = 0;
-#declare ry = 0;
-#declare rz = 0;
+#declare ry = 60;
+#declare rz = 90;
 
-#declare sx = 0;
-#declare sy = 0;
-#declare sz = 0; 
+#declare sx = -1;
+#declare sy = -1;
+#declare sz = -1; 
 
 #declare drx = 0;
 #declare dry = 0;
 #declare drz = 0;
-
-#declare tx = 0;
-#declare ty = 0;
-#declare tz = 0;
-
+         /*
+#declare tx = 10.070474;
+#declare ty = 3.766042;
+#declare tz = 5.967886; 
+    */
+#declare tx = 7.547531;  
+#declare ty = 7.916369;
+#declare tz = 6.167689;
+      
+      
 global_settings {
   assumed_gamma 2.2
   ambient_light color rgb <1, 1, 1>
@@ -59,8 +64,12 @@ light_source {	// #2
   shadowless
 }     
 
-#include "MCE_atoms.inc
+#declare bondsColor = color rgb <1,1,1>;
+#declare MapcylRadius=0.015000;
 
-#include "Diamond1.inc"
+
+#include "Diamond.inc"
 #include "MCE.inc"
+
+//#include "MCE_atoms.inc"
 
